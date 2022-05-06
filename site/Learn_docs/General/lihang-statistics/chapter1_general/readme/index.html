@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../../img/favicon.ico">
+        <title>第一章 统计学习及监督学习概论 - My Docs</title>
+        <link href="../../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../../.." class="nav-link">index</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">learn <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">CPP</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++ primer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/C++ primer/chapter2/README.md" class="dropdown-item">chapter 2</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/01-mem-and-pointer.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/02-pointerII-fun-stack.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">第一章 统计学习及监督学习概论</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">统计学习的分类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">统计学习方法三要素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">第一章 统计学习及监督学习概论</h1>
+<h2 id="_2">统计学习的分类</h2>
+<h3 id="_3">监督学习</h3>
+<ul>
+<li>本质是学习输入到输出的映射规律，该映射由模型来表示，最好的模型属于映射空间，该空间也成为假设空间。</li>
+<li>假设输入与输出的随机变量X，Y，遵循联合概率分布<em>P(X,Y)</em>，预测可写作<em>P(y|x)</em>,or <em>y=f(x)</em></li>
+</ul>
+<h3 id="_4">无监督学习</h3>
+<ul>
+<li>本质是学习数据中心的统计规律或潜在结构</li>
+</ul>
+<h3 id="_5">强化学习</h3>
+<h3 id="_6">半监督与主动学习</h3>
+<h3 id="_7">贝叶斯学习</h3>
+<ul>
+<li>本质是利用贝叶斯定理，计算在给定数据条件下模型的条件概率，即后验概率</li>
+<li><strong>贝叶斯估计和极大似然估计在思想上有很大的不同，代表统计学中贝叶斯学派和统计学派对统计的不同认识？？？</strong> 假设先验分布是均匀分布，去后验概率最大，就能从贝叶斯估计得到极大似然估计</li>
+<li>上一点不懂的可参照 <a href="https://www.cnblogs.com/sylvanas2012/p/5058065.html">https://www.cnblogs.com/sylvanas2012/p/5058065.html</a></li>
+</ul>
+<h3 id="_8">核方法</h3>
+<ul>
+<li>线性到非线性：求映射--&gt;求映射后的内积。</li>
+<li>核函数直接定义内积，完成映射</li>
+</ul>
+<h2 id="_9">统计学习方法三要素</h2>
+<h3 id="_10">模型</h3>
+<ul>
+<li>所要学习的条件概率分布或者决策函数，即确定假设空间。</li>
+</ul>
+<h3 id="_11">策略</h3>
+<ul>
+<li>按照怎样的准则在假设空间中选择最优模型</li>
+<li>损失函数--只能得到经验损失，样本量小时，经验损失不能代表真正的期望风险，使用正则化对经验损失进行优化=结构风险：
+    · 过拟合 训练误差逐渐减小然而测试误差将先减小后增大
+    · 正则化包括两项，一个函数为模型复杂度，另一个是超参数，主要是为了缓解过拟合（模型越复杂，正则化项越大，对于损失函数的惩罚也就越大，可以达到由于模型复杂度高而造成的过拟合现象）
+    · 交叉验证 将数据分为训练、验证、测试集</li>
+</ul>
+<h3 id="_12">算法</h3>
+<h3 id="_13">可参考资料</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/35141478">https://zhuanlan.zhihu.com/p/35141478</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../../js/base.js" defer></script>
+        <script src="../../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

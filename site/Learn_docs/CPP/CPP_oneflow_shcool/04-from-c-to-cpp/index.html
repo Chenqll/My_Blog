@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>C++ 开始 - My Docs</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">index</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">learn <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">CPP</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++ primer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/C++ primer/chapter2/README.md" class="dropdown-item">chapter 2</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/01-mem-and-pointer.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/02-pointerII-fun-stack.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#c" class="nav-link">C++ 开始</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">联合体、枚举</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#c-c" class="nav-link">从 C 到 C++</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#c_1" class="nav-link">C++ 中的类</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="c">C++ 开始</h1>
+<h2 id="_1">联合体、枚举</h2>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+union MyUnion {
+  double a;
+  int b;
+};
+
+int main(int argc, char* argv[])
+{
+  MyUnion u;
+  u.a = 3.14;
+  u.b = 0x12345678;
+  return 0;
+}
+</code></pre>
+<p>联合体的特点：</p>
+<ul>
+<li>所有成员共用同一块内存（首地址都一样）</li>
+<li>联合体变量的大小，是成员中最大者</li>
+</ul>
+<p>联合体一般可以用来做类型转换等：</p>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+union MyUnion {
+  double a;
+  unsigned char chAry[sizeof(double)];
+};
+
+int main(int argc, char* argv[])
+{
+  MyUnion u;
+  u.a = 3.14;
+  for(int i = 0; i &lt; sizeof(double); i++){
+    printf(&quot;%02X &quot;, u.chAry[i]);
+  }
+  return 0;
+}
+</code></pre>
+<h2 id="c-c">从 C 到 C++</h2>
+<p>先谈简单的一些 C 到 C++ 的细节：</p>
+<ul>
+<li>增加了 bool 类型</li>
+<li>增加了 nullptr 关键字（代替 NULL）</li>
+<li>支持函数重载</li>
+<li>支持块作用域中定义变量</li>
+<li>支持名称空间</li>
+</ul>
+<p>函数重载、名称空间其实都是利用“名称粉碎”的(name dangling)技术做的。c++filt 可以复原名称。</p>
+<pre><code class="language-c++">(oneflow-dev) yaochi@7275806cee0b:~/cmake_example/build$ c++filt _Z5myfunii
+myfun(int, int)
+</code></pre>
+<h2 id="c_1">C++ 中的类</h2>
+<p>面向对象编程到底是哪个范畴的东西，对等的东西是什么？</p>
+<p>面向对象是一种“如何做抽象”范畴的东西，属于方法论，它对等的东西：面向过程编程；Actor。</p>
+<p>使用 C 其实也是可以面向对象的。面向对象的优点在于，把事务抽象成“对象”，而对象的三大特性：继承、封装、多态和人的直觉比较吻合，大大降低了人抽象问题的门槛。</p>
+<h3 id="_2">封装</h3>
+<p>所谓的封装，其实就是把 “数据”和“动作”打包结合在一起。在 C 中，用函数指针，也可以做到封装：</p>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct tagFile{
+  FILE * m_pFile = NULL;
+  FILE* (*m_fpn_open)(const char *pathname, const char *mode)=fopen;
+  size_t (*m_fpn_write)(const void *ptr, size_t size, size_t nmemb,
+                     FILE *stream) = fwrite;
+  int (*m_fpn_close)(FILE *stream) = fclose;
+};
+
+int main(int argc, char* argv[])
+{
+  struct tagFile myfile_obj;
+  myfile_obj.m_pFile =  myfile_obj.m_fpn_open(&quot;xxx.tmp&quot;, &quot;wb&quot;);
+  myfile_obj.m_fpn_write(&quot;helloworkd&quot;, 10, 1, myfile_obj.m_pFile);
+  myfile_obj.m_fpn_close(myfile_obj.m_pFile);
+  return 0;
+}
+</code></pre>
+<p>C++ 在语法层次提供了“封装”，可以直接在 “类中定义方法”，并直接用 <code>对象.方法()</code> 的方式调用：</p>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+struct tagFile{
+  FILE * m_pFile = NULL;
+  FILE* open(const char* path, const char* mode){
+    m_pFile = fopen(path, mode);
+    return m_pFile;
+  }
+};
+
+int main(int argc, char* argv[])
+{
+  struct tagFile myfile_obj;
+  myfile_obj.open(&quot;xxxx2.tmp&quot;, &quot;wb&quot;);
+
+  struct tagFile myfile_obj2;
+  myfile_obj2.open(&quot;xxx_two.tmp&quot;, &quot;wb&quot;);
+  return 0;
+}
+</code></pre>
+<p>所谓对象方法的调用，其实是编译偷偷做了小动作，即</p>
+<p><code>对象.方法调用(...)</code> 等价于 <code>函数调用(&amp;对象, ..)</code>。</p>
+<p>知道这个之后，很多 C++ 的上层语法是可以联系到一起的。</p>
+<p>比如： C++ 中的 <code>const 方法</code>，其实就是传递了一个 <code>const * const</code> 类型的 <code>this</code> 指针。</p>
+<p>再比如：<code>static</code> 方法。</p>
+<p>回顾下 C 中 <code>static</code> 关键字的作用：</p>
+<ul>
+<li>修饰局部变量的话，它其实得到“局部静态变量”，局部静态变量的特点：声明周期等同于全局变量，只不过作用域被限定在了函数作用域。</li>
+<li>修饰函数，就得到“局部静态函数”，它其实和普通函数是一样的，只不过限定在文件作用域</li>
+</ul>
+<p>C++ 中，<code>static</code> 关键字的作用：</p>
+<ul>
+<li>修饰方法的话，得到“静态成员方法”，等于于全局函数（换言之，调用时不会传递 this 指针），只不过被限定在了类作用域。</li>
+<li>修饰类成员的话，得到了“静态成员”，等同于全局函数，只不过被限定在类作用域</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

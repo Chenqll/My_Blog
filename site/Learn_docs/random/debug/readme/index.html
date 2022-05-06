@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Readme - My Docs</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">index</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">learn <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">CPP</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++ primer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/C++ primer/chapter2/README.md" class="dropdown-item">chapter 2</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/01-mem-and-pointer.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+            
+<li>
+    <a href="D:/myblog/docs/Learn_docs/CPP/CPP_oneflow_shcool/02-pointerII-fun-stack.md" class="dropdown-item">CPP_oneflow_school</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<pre><code class="language-python">
+libai
+
+(Pdb) p examples[0]
+InputExample(guid='train-1', text_a=['1', '9', '6', '6', '年', '出', '生', '，', '汉', '族', '，', '中', '共', '党', '员', '，', '本', '科', '学', '历', '，', '工', '程', '师', '、', '美', '国', '项', '目', '管', '理', '协', '会', '注', '册', '会', '员', '（', 'P', 'M', 'I', 'M', 'e', 'm', 'b', 'e', 'r', '）', '、', '注', '册', '项', '目', '管', '理', '专', '家', '（', 'P', 'M', 'P', '）', '、', '项', '目', '经', '理', '。'], text_b=None, label=['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-RACE', 'I-RACE', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'B-EDU', 'I-EDU', 'I-EDU', 'I-EDU', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'B-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'O', 'O', 'B-TITLE', 'I-TITLE', 'I-TITLE', 'I-TITLE', 'O'])
+</code></pre>
+<pre><code class="language-python">
+ner
+
+(Pdb) p examples[0]
+{
+  &quot;guid&quot;: &quot;train-1&quot;,
+  &quot;labels&quot;: [
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;B-RACE&quot;,
+    &quot;I-RACE&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;B-EDU&quot;,
+    &quot;I-EDU&quot;,
+    &quot;I-EDU&quot;,
+    &quot;I-EDU&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;B-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;I-ORG&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;,
+    &quot;O&quot;,
+    &quot;B-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;I-TITLE&quot;,
+    &quot;O&quot;
+  ],
+  &quot;text_a&quot;: [
+    &quot;1&quot;,
+    &quot;9&quot;,
+    &quot;6&quot;,
+    &quot;6&quot;,
+    &quot;\u5e74&quot;,
+    &quot;\u51fa&quot;,
+    &quot;\u751f&quot;,
+    &quot;\uff0c&quot;,
+    &quot;\u6c49&quot;,
+    &quot;\u65cf&quot;,
+    &quot;\uff0c&quot;,
+    &quot;\u4e2d&quot;,
+    &quot;\u5171&quot;,
+    &quot;\u515a&quot;,
+    &quot;\u5458&quot;,
+    &quot;\uff0c&quot;,
+    &quot;\u672c&quot;,
+    &quot;\u79d1&quot;,
+    &quot;\u5b66&quot;,
+    &quot;\u5386&quot;,
+    &quot;\uff0c&quot;,
+    &quot;\u5de5&quot;,
+    &quot;\u7a0b&quot;,
+    &quot;\u5e08&quot;,
+    &quot;\u3001&quot;,
+    &quot;\u7f8e&quot;,
+    &quot;\u56fd&quot;,
+    &quot;\u9879&quot;,
+    &quot;\u76ee&quot;,
+    &quot;\u7ba1&quot;,
+    &quot;\u7406&quot;,
+    &quot;\u534f&quot;,
+    &quot;\u4f1a&quot;,
+    &quot;\u6ce8&quot;,
+    &quot;\u518c&quot;,
+    &quot;\u4f1a&quot;,
+    &quot;\u5458&quot;,
+    &quot;\uff08&quot;,
+    &quot;P&quot;,
+    &quot;M&quot;,
+    &quot;I&quot;,
+    &quot;M&quot;,
+    &quot;e&quot;,
+    &quot;m&quot;,
+    &quot;b&quot;,
+    &quot;e&quot;,
+    &quot;r&quot;,
+    &quot;\uff09&quot;,
+    &quot;\u3001&quot;,
+    &quot;\u6ce8&quot;,
+    &quot;\u518c&quot;,
+    &quot;\u9879&quot;,
+    &quot;\u76ee&quot;,
+    &quot;\u7ba1&quot;,
+    &quot;\u7406&quot;,
+    &quot;\u4e13&quot;,
+    &quot;\u5bb6&quot;,
+    &quot;\uff08&quot;,
+    &quot;P&quot;,
+    &quot;M&quot;,
+    &quot;P&quot;,
+    &quot;\uff09&quot;,
+    &quot;\u3001&quot;,
+    &quot;\u9879&quot;,
+    &quot;\u76ee&quot;,
+    &quot;\u7ecf&quot;,
+    &quot;\u7406&quot;,
+    &quot;\u3002&quot;
+  ]
+}
+</code></pre>
+<pre><code class="language-python">ner
+
+(Pdb) p example.text_a
+['1', '9', '6', '6', '年', '出', '生', '，', '汉', '族', '，', '中', '共', '党', '员', '，', '本', '科', '学', '历', '，', '工', '程', '师', '、', '美', '国', '项', '目', '管', '理', '协', '会', '注', '册', '会', '员', '（', 'P', 'M', 'I', 'M', 'e', 'm', 'b', 'e', 'r', '）', '、', '注', '册', '项', '目', '管', '理', '专', '家', '（', 'P', 'M', 'P', '）', '、', '项', '目', '经', '理', '。']
+
+if isinstance(example.text_a,list):
+            example.text_a = &quot; &quot;.join(example.text_a)
+
+(Pdb) p example.text_a
+'1 9 6 6 年 出 生 ， 汉 族 ， 中 共 党 员 ， 本 科 学 历 ， 工 程 师 、 美 国 项 目 管 理 协 会 注 册 会 员 （ P M I M e m b e r ） 、 注 册 项 目 管 理 专 家 （ P M P ） 、 项 目 经 理 。'
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
